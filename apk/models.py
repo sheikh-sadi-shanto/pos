@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.contrib.auth.models import User
+from rest_framework.validators import ValidationError
 
 # Create your models here.
 
@@ -9,7 +10,7 @@ def validate_video_size(value):
     max_size=300*1024*1024
     file_size=value.size
     if max_size<file_size:
-        raise ValueError('this file is more than 300MB ')
+        raise ValidationError('this file is more than 300MB ')
     return value
 
 

@@ -35,15 +35,15 @@ class CrimeVideosViewitem(APIView):
                 return Response({'msg':'full data update'})
             return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
-    def patch(self,request,pk=None):
-        get_video_query=CrimeVideos.objects.filter(id=pk)
-        serializer=CrimeVideosSerializer(get_video_query,data=request.data,Partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'msg':'partial data update'})
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    # def patch(self,request,pk=None):
+    #     get_video_query=CrimeVideos.objects.filter(id=pk)
+    #     serializer=CrimeVideosSerializer(get_video_query,data=request.data,Partial=True)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response({'msg':'partial data update'})
+    #     return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
-    def delete(self,request,pk=None):
-        que=CrimeVideos.objects.filter(id=pk)
-        que.delete()
-        return Response({'msg':'deleted successfully'})
+    # def delete(self,request,pk=None):
+    #     que=CrimeVideos.objects.filter(id=pk)
+    #     que.delete()
+    #     return Response({'msg':'deleted successfully'})
