@@ -1,0 +1,8 @@
+/manage.py
+
+/apk/migrations
+/apk/__pycache__
+/pos/migrations
+/pos/__pycache__
+/videos
+/db.sqlite3
