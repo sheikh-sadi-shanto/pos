@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apk.models import CrimeVideos
+from video.models import CrimeVideos
 
 
 class CrimeVideosSerializer(serializers.ModelSerializer):

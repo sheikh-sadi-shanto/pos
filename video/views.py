@@ -2,8 +2,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from apk.models import CrimeVideos
-from apk.serializer import CrimeVideosSerializer
+from video.models import CrimeVideos
+from video.serializer import CrimeVideosSerializer
 
 # Create your views here.
 class CrimeVideosView(APIView):

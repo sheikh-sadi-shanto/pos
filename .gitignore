@@ -1,8 +1,8 @@
 /manage.py
 
-/apk/migrations
-/apk/__pycache__
+/video/migrations
+/video/__pycache__
 /pos/migrations
 /pos/__pycache__
-/videos
+/crime_videos
 /db.sqlite3

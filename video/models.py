@@ -16,7 +16,7 @@ def validate_video_size(value):
 
 class CrimeVideos(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    video=models.FileField(upload_to='videos',validators=[FileExtensionValidator(allowed_extensions=['MOV','mp4','mkv','webm']),validate_video_size])
+    video=models.FileField(upload_to='crime_videos',validators=[FileExtensionValidator(allowed_extensions=['MOV','mp4','mkv','webm']),validate_video_size])
     description=models.TextField()
     title=models.CharField(max_length=300)
     is_solved=models.BooleanField(default=False)
