@@ -14,3 +14,6 @@ class EntertainmentAdmin(admin.ModelAdmin):
     list_filter=['is_onboard','is_solved']
 admin.site.register(EntertainmentVideos,EntertainmentAdmin)
 admin.site.register(EntertainmentComment)
+
+admin.site.site_header='Rupganj1Family'
+admin.site.site_title='Rupganj1Family'
