@@ -17,9 +17,39 @@ def validate_video_size(value):
 class CrimeVideos(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     video=models.FileField(upload_to='crime_videos',validators=[FileExtensionValidator(allowed_extensions=['MOV','mp4','mkv','webm']),validate_video_size])
-    description=models.TextField()
+    description=models.TextField(null=True,blank=True)
     title=models.CharField(max_length=300)
+    view_count=models.IntegerField(default=0)
+    views_by_devices=models.JSONField(default=list)
+    is_solved=models.BooleanField(default=False)
+    is_onboard=models.BooleanField(default=False)
+    # def __str__(self):
+    #     return self.title
+    
+class Comment(models.Model):
+    video=models.ForeignKey(CrimeVideos,on_delete=models.CASCADE)
+    comments=models.CharField(max_length=400)
+    def __str__(self):
+        return (self.video.title+'-'+self.comments[0:20])
+    
+
+
+
+
+class EntertainmentVideos(models.Model):
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    video=models.FileField(upload_to='entertainment_videos',validators=[FileExtensionValidator(allowed_extensions=['MOV','mp4','mkv','webm']),validate_video_size])
+    description=models.TextField(null=True,blank=True)
+    title=models.CharField(max_length=300)
+    view_count=models.IntegerField(default=0)
+    views_by_devices=models.JSONField(default=list)
     is_solved=models.BooleanField(default=False)
     is_onboard=models.BooleanField(default=False)
     def __str__(self):
         return self.title
+    
+class EntertainmentComment(models.Model):
+    video=models.ForeignKey(EntertainmentVideos,on_delete=models.CASCADE)
+    comments=models.CharField(max_length=400)
+    def __str__(self):
+        return (self.video.title+'-'+self.comments[0:20])

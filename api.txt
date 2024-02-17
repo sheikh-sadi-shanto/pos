@@ -1,0 +1,8 @@
+crimevideo         #fields (video,description,title,view_count,views_by_devices,is_solved,is_onboard)
+crimevideo/1       #same api by item
+crimevideocomment/1  #comment for each crime video fields ('video','comments')
+
+
+entertainmentvideo ##fields (video,description,title,view_count,views_by_devices,is_solved,is_onboard)
+entertainmentvideo/1  #same api by item 
+entertainmentvideocomment/1 #comment for each  entertainment video fields ('video','comments')

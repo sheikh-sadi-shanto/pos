@@ -1,8 +1,12 @@
 /manage.py
 
+/video/static
+/video/middleware.py
+/video/templates
 /video/migrations
 /video/__pycache__
 /pos/migrations
 /pos/__pycache__
 /crime_videos
 /db.sqlite3
+/entertainment_videos
